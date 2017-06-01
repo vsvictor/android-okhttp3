@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.nuubit.sdk.NuubitSDK;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -70,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initOkHttpClient() {
+/*
         File sdcache = getExternalCacheDir();
         int cacheSize = 10 * 1024 * 1024;
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
@@ -78,6 +81,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .readTimeout(20, TimeUnit.SECONDS)
                 .cache(new Cache(sdcache.getAbsoluteFile(), cacheSize));
         mOkHttpClient = builder.build();
+*/
+        mOkHttpClient = NuubitSDK.OkHttpCreate();
     }
 
     /**
